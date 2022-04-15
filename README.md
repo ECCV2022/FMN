@@ -1,6 +1,6 @@
 # FMN
 
-The original code submission for FMN.
+The original anonymous code submission for FMN.
 
 ## Running example
 
