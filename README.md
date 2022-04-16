@@ -2,9 +2,9 @@
 
 The original anonymous code submission for FMN.
 ## Dependencies and Installation
-*python=3.6(Recommend to use Anaconda or Miniconda)
-*PyTorch>=1.0
-*NVIDIA GPU + CUDA
+* python=3.6(Recommend to use Anaconda or Miniconda)
+* PyTorch>=1.0
+* NVIDIA GPU + CUDA
 1. Clone repo
 ```
 git clone https://github.com/ECCV2022/FMN.git
