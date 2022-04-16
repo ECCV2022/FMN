@@ -1,0 +1,12 @@
+numpy
+opencv-python
+scikit-learn
+scipy==1.5.4
+seaborn==0.11.2
+tensorboard
+tensorboardX==2.4.1
+torch==1.10.2+cu113
+torchfile==0.1.0
+torchnet==0.0.4
+torchvision==0.11.3+cu113
+tornado

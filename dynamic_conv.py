@@ -82,7 +82,6 @@ class Dynamic_conv2d(nn.Module):
         if init_weight:
             self._initialize_weights()
 
-        #TODO 初始�?
     def _initialize_weights(self):
         for i in range(self.K):
             nn.init.kaiming_uniform_(self.weight1[i])
@@ -97,7 +96,7 @@ class Dynamic_conv2d(nn.Module):
     def update_temperature(self):
         self.attention.updata_temperature()
 
-    def forward(self, x):#将batch视作维度变量，进行组卷积，因为组卷积的权重是不同的，动态卷积的权重也是不同�?
+    def forward(self, x):
 
         softmax_attention = self.attention(x)
 
@@ -107,14 +106,14 @@ class Dynamic_conv2d(nn.Module):
 
         batch_size, in_planes, height, width = x.size()
         identity = x
-        x = x.view(1, -1, height, width)# 变化成一个维度进行组卷积
+        x = x.view(1, -1, height, width)
         weight1 = self.weight1.view(softmax_attention.shape[-1], -1)
         # weight2 = self.weight2.view(softmax_attention.shape[-1], -1)
         # weight3 = self.weight3.view(softmax_attention.shape[-1], -1)
         # weight4 = self.weight4.view(softmax_attention.shape[-1], -1)
         # weight = self.weight.view(self.K, -1)
 
-        # 动态卷积的权重的生成， 生成的是batch_size个卷积参数（每个参数不同�?
+
         # aggregate_weight1 = torch.mm(softmax_attention, weight1).unsqueeze(1).repeat(1,c,1,1,1,1).view(-1, self.in_planes, self.kernel_size, self.kernel_size)
         aggregate_weight1 = torch.mm(softmax_attention, weight1).view(-1, self.in_planes, self.kernel_size, self.kernel_size)
         # aggregate_weight2 = torch.mm(softmax_attention, weight2).view(-1, self.middle, self.kernel_size,

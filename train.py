@@ -4,7 +4,7 @@ from utils import *
 
 MODEL_DIR=None
 
-DATA_DIR = '/home/SunWei/Dataset/'
+DATA_DIR = '/home/Dataset/'
 PROJECT='base'
 
 def get_command_line_parser():
