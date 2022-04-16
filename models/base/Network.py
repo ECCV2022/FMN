@@ -187,7 +187,7 @@ class MYNET(nn.Module):
                 old_fc = self.fc.weight[:self.args.base_class + self.args.way * (session - 1), :] #.detach()
                 fc = torch.cat([old_fc, new_fc], dim=0)
 
-                logits = self.get_logits(new_out,fc)  #data[25*i:25*(i+1),:]
+                logits = self.get_logits(new_out,fc)  
 
 
                 ############### distillation loss ##########################################

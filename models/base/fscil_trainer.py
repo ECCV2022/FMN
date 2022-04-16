@@ -33,12 +33,6 @@ class FSCILTrainer(Trainer):
     def get_optimizer_base(self):
         basis = self.model.module.encoder.dynamic_conv.weight1.clone().detach()
         basis.requires_grad = True
-        # for name, param in self.model.module.named_parameters():
-        # #指定参数层
-        #     attention = [param for name  , param in self.model.module.named_parameters() if 'dynamic_conv.attention' in name]
-        #     attention_id = list(map(id, attention))
-        #     #获取剩余层
-        #     other = list(filter(lambda p: id(p) not in attention_id, self.model.module.parameters()))
         
         optimizer = torch.optim.SGD([{'params':self.model.parameters(), 'lr':self.args.lr_base},
                                      {'params':basis, 'lr':self.args.lr_base}
