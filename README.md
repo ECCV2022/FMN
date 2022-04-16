@@ -24,6 +24,6 @@ We evaluate our system in several datasets, including `CUB-200-2011, CIFAR100, m
 ### Training on miniimagenet
 
 ```
-python train.py
+python train.py -project base -dataset mini_imagenet -epochs_base 100 -epochs_new 30 -gamma 0.1 -decay 0.0005 -gpu 0 -temperature 16 -basetrain False -shot 5 -lr_base 0.1 -schedule Step -step 40  -sh 0 
 ```
 
