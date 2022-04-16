@@ -2,8 +2,8 @@
 
 The original anonymous code submission for FMN.
 ## Dependencies and Installation
-* python=3.6(Recommend to use Anaconda or Miniconda)
-* PyTorch>=1.3
+* python = 3.6 (Recommend to use Anaconda or Miniconda)
+* PyTorch >= 1.3
 * NVIDIA GPU + CUDA
 1. Clone repo
 ```
